@@ -1,0 +1,32 @@
+package codemakers.daggermvvm.di.component
+
+import android.app.Application
+import codemakers.daggermvvm.App
+import codemakers.daggermvvm.di.ActivityBuilders
+import codemakers.daggermvvm.di.module.AppModule
+import dagger.BindsInstance
+import dagger.Component
+import dagger.android.AndroidInjectionModule
+import javax.inject.Singleton
+
+/**
+ * Created by Asus on 18/10/2017.
+ */
+@Singleton
+@Component(modules = arrayOf(
+        AndroidInjectionModule::class,
+        AppModule::class,
+        ActivityBuilders::class
+))
+interface AppComponent{
+
+
+    fun inject(app: App)
+
+    @Component.Builder
+    interface Builder{
+        @BindsInstance
+        fun applicacion(application: Application):Builder
+        fun build():AppComponent
+    }
+}
