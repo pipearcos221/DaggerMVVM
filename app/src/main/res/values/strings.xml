@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DaggerMVVM</string>
+    <string name="mainTitle">Lista de Tareas</string>
 </resources>

@@ -2,6 +2,7 @@ package codemakers.daggermvvm.di.module
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import codemakers.daggermvvm.ui.add.AddViewModel
 import codemakers.daggermvvm.ui.main.MainViewModel
 import codemakers.daggermvvm.util.AppViewModelFactory
 import dagger.Binds
@@ -22,5 +23,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddViewModel::class)
+    abstract fun bindAddViewModel(viewModel: AddViewModel): ViewModel
 
 }

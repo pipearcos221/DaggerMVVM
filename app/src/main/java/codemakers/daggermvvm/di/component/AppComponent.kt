@@ -4,6 +4,7 @@ import android.app.Application
 import codemakers.daggermvvm.App
 import codemakers.daggermvvm.di.ActivityBuilders
 import codemakers.daggermvvm.di.module.AppModule
+import codemakers.daggermvvm.di.module.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -16,7 +17,8 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(
         AndroidInjectionModule::class,
         AppModule::class,
-        ActivityBuilders::class
+        ActivityBuilders::class,
+        ViewModelModule::class
 ))
 interface AppComponent{
 
