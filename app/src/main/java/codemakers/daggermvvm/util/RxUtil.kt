@@ -10,11 +10,11 @@ import io.reactivex.schedulers.Schedulers
  */
 
 fun <T> Flowable<T>.applySchedulers(): Flowable<T> {
-    return subscribeOn(Schedulers.computation())
+    return subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 }
 
 fun <T> Observable<T>.applySchedulers(): Observable<T> {
-    return subscribeOn(Schedulers.computation())
+    return subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 }

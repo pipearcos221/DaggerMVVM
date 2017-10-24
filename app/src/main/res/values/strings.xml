@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DaggerMVVM</string>
     <string name="mainTitle">Lista de Tareas</string>
+    <string name="addTask">Agregar Tarea</string>
+    <string name="taskIncomplete">Verificar: Campos Incompletos</string>
+    <string name="msgSnackBar">Actividad Eliminada</string>
+    <string name="undo">Deshacer</string>
 </resources>

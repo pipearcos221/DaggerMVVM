@@ -10,6 +10,8 @@ import codemakers.daggermvvm.R
 import codemakers.daggermvvm.data.model.Todo
 import codemakers.daggermvvm.databinding.TemplateTodoBinding
 import codemakers.daggermvvm.util.inflate
+import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.Subject
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -18,6 +20,9 @@ import java.util.*
  */
 
 class TodoAdapter: RecyclerView.Adapter<TodoAdapter.TodoHolder>(){
+
+    val todoDetail = PublishSubject.create<Todo>()
+    val todoDelete = PublishSubject.create<Todo>()
 
     var data: List<Todo> = emptyList()
         set(value){
@@ -29,6 +34,8 @@ class TodoAdapter: RecyclerView.Adapter<TodoAdapter.TodoHolder>(){
 
     override fun onBindViewHolder(holder: TodoHolder, position: Int) {
         holder.binding.todo = data[position]
+        holder.binding.clickDetail = todoDetail
+        holder.binding.clickDelete = todoDelete
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoHolder
